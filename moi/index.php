@@ -198,61 +198,7 @@ include 'includes/navbar.php';
                     </td>
 
                   </tr>
-                  <tr>
-                    <td class="font-weight-bold">
-                      Departent
-                    </td>
-                    <td class="text-muted">
-                      Medical
-                    </td>
-                    <td class="text-muted">
-                      D100
-                    </td>
-                    <td>
-                      12/03/2022
-                    </td>
 
-                    <td>
-                      <label class="badge badge-danger badge-pill">Processing</label>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="font-weight-bold">
-                      Department
-                    </td>
-                    <td class="text-muted">
-                      Nursing
-                    </td>
-                    <td class="text-muted">
-                      D200
-                    </td>
-                    <td>
-                      12/03/2022
-                    </td>
-
-                    <td>
-                      <label class="badge badge-primary badge-pill">Delivered</label>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="font-weight-bold">
-                      Department
-                    </td>
-                    <td class="text-muted">
-                      Nursing
-                    </td>
-                    <td class="text-muted">
-                      D200
-                    </td>
-                    <td>
-                      12/03/2022
-                    </td>
-
-                    <td>
-                      <label class="badge badge-primary badge-pill">Delivered</label>
-                    </td>
-
-                  </tr>
                 </tbody>
               </table>
             </div>
