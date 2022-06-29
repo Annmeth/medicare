@@ -9,7 +9,7 @@
         </div>
         <div class="profile-name">
           <p class="name">
-            Welcome Amina
+            Welcome
           </p>
           <p class="designation">
             Store keeper

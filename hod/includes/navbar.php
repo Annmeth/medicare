@@ -55,7 +55,7 @@
 
     <li class="nav-item">
       <a class="nav-link" href="report.php">
-        <i class="fas fa-pen-square menu-icon"></i>
+        <i class="fas fa-file-medical menu-icon"></i>
         <span class="menu-title">Report</span>
       </a>
     </li>
