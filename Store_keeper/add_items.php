@@ -66,10 +66,12 @@ if (isset($_POST['add_data'])) {
           <input type="varchar" name="skname" id="skname" class="form-control" placeholder="" required>
         </div>
         <div class="form-group">
-          <label for=""> Item Type </label>
-          <select class="form-group" id="Ittype">
-            <option value="">Equipment</option>
-            <option value="">Supplies</option>
+          <label for=""> Item type </label>
+          <input type="varchar" name="ittype" id="item type" class="form-control" placeholder="" required>
+          <select id="item type">
+            <option value="item type">select item type</option>
+            <option value="equipment">Equipment</option>
+            <option value="supply">Supply</option>
           </select>
         </div>
         <div class="form-group">
