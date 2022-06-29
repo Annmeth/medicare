@@ -31,16 +31,13 @@ if (isset($_POST['add_data'])) {
   $qty = mysqli_real_escape_string($db, $_POST['qty']);
   $rrsn = mysqli_real_escape_string($db, $_POST['rrsn']);
 
-    $query = "INSERT INTO dep_request1 (depid,hodname,strname,rittype,ritname,qty,rrsn)
+  $query = "INSERT INTO dep_request1 (depid,hodname,strname,rittype,ritname,qty,rrsn)
   			  VALUES('$depid','$hodname','$strname','$rittype','$ritname','$qty','$rrsn')";
-      if(mysqli_query($db, $query))
-      {
-      echo "<script>alert('Successfully stored');</script>";
-
-    }
-    else{
-        echo"<script>alert('Somthing wrong!!!');</script>";
-    }
+  if (mysqli_query($db, $query)) {
+    echo "<script>alert('Successfully stored');</script>";
+  } else {
+    echo "<script>alert('Somthing wrong!!!');</script>";
+  }
 
   //	header('location: hospital.php');
 
@@ -48,59 +45,59 @@ if (isset($_POST['add_data'])) {
 ?>
 
 
- <div class="main-panel">
-         <div class="content-wrapper">
-           <div class="page-header">
-             <h3 class="page-title">Make A Department Request</h3>
-           </div>
-           <form action="add_req.php" method="POST">
-           <div class="body">
+<div class="main-panel">
+  <div class="content-wrapper">
+    <div class="page-header">
+      <h3 class="page-title">Make A Department Request</h3>
+    </div>
+    <form action="add_req.php" method="POST">
+      <div class="body">
 
-               <div class="form-group">
-                  <label for=""> Department ID </label>
-                  <input type="number" name="depid" id="depid" class="form-control" placeholder="Please Enter a Valid ID" required>
-                </div>
-                <div class="form-group">
-                  <label for=""> HOD Name </label>
-                  <input type="varchar" name="hodname" id="hodname" class="form-control" value="" required>
-                </div>
-               <div class="form-group">
-                  <label for=""> Store Name </label>
-                  <input type="varchar" name="strname" id="strname" class="form-control" placeholder="" required>
-               </div>
-               <div class="form-group">
-                  <label for=""> Requested Item Type </label>
-                  <input type="varchar" name="rittype" id="rittype" class="form-control" placeholder="" required>
-               </div>
-               <div class="form-group">
-                  <label for=""> Requested Item Name </label>
-                  <input type="varchar" name="ritname" id="ritname" class="form-control" placeholder="" required>
-               </div>
+        <div class="form-group">
+          <label for=""> Department ID </label>
+          <input type="varchar" name="depid" id="depid" class="form-control" placeholder="Please Enter a Valid ID" required>
+        </div>
+        <div class="form-group">
+          <label for=""> HOD Name </label>
+          <input type="varchar" name="hodname" id="hodname" class="form-control" value="" required>
+        </div>
+        <div class="form-group">
+          <label for=""> Store Name </label>
+          <input type="varchar" name="strname" id="strname" class="form-control" placeholder="" required>
+        </div>
+        <div class="form-group">
+          <label for=""> Requested Item Type </label>
+          <input type="varchar" name="rittype" id="rittype" class="form-control" placeholder="" required>
+        </div>
+        <div class="form-group">
+          <label for=""> Requested Item Name </label>
+          <input type="varchar" name="ritname" id="ritname" class="form-control" placeholder="" required>
+        </div>
 
-               <div class="form-group">
-                  <label for=""> Quantity </label>
-                  <input type="varchar" name="qty" id="qty" class="form-control" placeholder="" required>
-               </div>
+        <div class="form-group">
+          <label for=""> Quantity </label>
+          <input type="varchar" name="qty" id="qty" class="form-control" placeholder="" required>
+        </div>
 
-               <div class="form-group">
-                 <label for=""> Request Reason </label>
-                 <input type="varchar" name="rrsn" id="rrsn" class="form-control" value="">
-               </div>
+        <div class="form-group">
+          <label for=""> Request Reason </label>
+          <input type="varchar" name="rrsn" id="rrsn" class="form-control" value="">
+        </div>
 
-              <button type="submit" class="btn btn-primary" name="add_data">Save</button>
-
-
-             </form>
+        <button type="submit" class="btn btn-primary" name="add_data">Save</button>
 
 
+    </form>
 
 
 
 
-           </div>
 
-   </div>
-   <?php
-   include 'includes/footer.php';
-   include 'includes/scripts.php';
-   ?>
+
+  </div>
+
+</div>
+<?php
+include 'includes/footer.php';
+include 'includes/scripts.php';
+?>
