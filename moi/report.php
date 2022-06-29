@@ -10,7 +10,7 @@ $count = 0;
 if ($result->num_rows > 0) {
   $tbody = "";
   while ($row = $result->fetch_assoc()) {
-    $count =$count + 1;
+    $count = $count + 1;
     $dep_id = $row['dep_id'];
     $dep_name = $row['dep_name'];
     $hod_name = $row['hod_name'];
@@ -75,10 +75,10 @@ if ($result->num_rows > 0) {
                 <b>Filter:</b>
                 <select class="btn btn-default" id="report-choice">
                   <option value="all">All </option>
-                  <option value="department">D100</option>
-                  <option value="department">D200</option>
-                  <option value="department">D300</option>
-                  <option value="department">D300</option>
+                  <option value="department">D-0001</option>
+                  <option value="department">D-0002</option>
+                  <option value="department">D-0003</option>
+                  <option value="department">D-0004</option>
                 </select>
 
                 <form method='POST' action='printbulk.php' style='border:none;display:inline;padding:0;'>
@@ -113,12 +113,12 @@ if ($result->num_rows > 0) {
                 </thead>
                 <tbody>
 
-                  <?php //$tbody;
+                  <?php
                   ?>
 
                   <tr>
                     <td><?php echo $count ?></td>
-                    <td>D-0001<?php echo $dep_id ?></td>
+                    <td>D-000<?php echo $dep_id ?></td>
                     <td><?php echo  $dep_name ?></td>
                     <td><?php echo $hod_name ?></td>
                     <td><?php echo  $total_equipment ?></td>
@@ -126,8 +126,8 @@ if ($result->num_rows > 0) {
                     <td>
 
                       <form method='POST' action='view_department_report.php' style='border:none;'>
-                        <input type='hidden' name='dep_id' value='<?php echo $dep_id; ?>' </input>
-                        <button type='submit' class='btn btn-outline-primary' title='View Report'>View Report</button>
+                        <input type='hidden' name='dep_id' value='<?php echo $dep_id; ?>'>
+                        <button type='submit' class='btn btn-outline-primary' style="margin-left:-50px;" title='View Report'>View Report</button>
                       </form>
                     </td>
                   </tr>

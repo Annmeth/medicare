@@ -1,15 +1,17 @@
 <?php include('includes/functions.php') ?>
 <!DOCTYPE html>
 <html>
+
 <head>
-	<title>Medical Equipment & Supplies Management System </title>
+	<title>Medical Supplies & Equipment Management System(MSEMS) </title>
 	<link rel="stylesheet" type="text/css" href="../style.css">
 	<link rel="icon" type="image/x-icon" href="./images/favicon.ico">
 
 </head>
+
 <body>
 	<div class="header">
-	<h4><a href="../index.php"> MEDICAL EQUIPMENT & SUPPLIES MANAGEMENT SYSTEM (MESMS) </a></h4>
+		<h4><a href="../index.php"> MEDICAL SUPPLIES & EQUIPMENT MANAGEMENT SYSTEM (MSEMS) </a></h4>
 	</div>
 	<form method="post" action="login.php">
 
@@ -17,7 +19,7 @@
 
 		<div class="input-group">
 			<label>Username</label>
-			<input type="text" name="username" >
+			<input type="text" name="username">
 		</div>
 		<div class="input-group">
 			<label>Password</label>
@@ -31,4 +33,5 @@
 		</p>
 	</form>
 </body>
+
 </html>
