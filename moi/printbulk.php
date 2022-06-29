@@ -34,10 +34,13 @@ if ($is_general == 1) {
 				$tbody .= "<tr>
 					<td>$count</td>
 					<td>D-000$dep_id</td>
-					<td>$nsname</td><td>$ittype</td>
+					<td>$nsname</td>
+					<td>$ittype</td>
 					<td>$itname</td>
-					<td>$qty</td><td>$impdate</td>
-					<td>$cdtn</td><td>$btcno</td>
+					<td>$qty</td>
+					<td>$impdate</td>
+					<td>$cdtn</td>
+					<td>$btcno</td>
 
 		  		</tr>";
 			}
@@ -56,14 +59,17 @@ if ($is_general == 1) {
 		$impdate = $row['impdate'];
 		$btcno = $row['btcno'];
 		$cdtn = $row['cdtn'];
-	
+
 		$tbody .= "<tr>
 					<td>$count</td>
 					<td>D-000$dep_id</td>
-					<td>$nsname</td><td>$ittype</td>
+					<td>$nsname</td>
+					<td>$ittype</td>
 					<td>$itname</td>
-					<td>$qty</td><td>$impdate</td>
-					<td>$cdtn</td><td>$btcno</td>
+					<td>$qty</td>
+					<td>$impdate</td>
+					<td>$cdtn</td>
+					<td>$btcno</td>
 
 		  		</tr>";
 	}
