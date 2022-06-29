@@ -30,13 +30,15 @@ if (!isLoggedIn()) {
                             <div class="col mr-2">
                                 <div class="text-xs font-weight-bold text-success text-mb-1">
                                     Total Users <br>
-                                    100</div>
+                                  <?php
+
+																	 ?> 100</div>
                                 <div class="h5 mb-0 font-weight-bold text-gray-800">
 
                                 </div>
                             </div>
                             <div class="col-auto">
-                            <i class="fa fa-users menu-icon"></i> 
+                            <i class="fa fa-users menu-icon"></i>
                             </div>
                         </div>
                     </div>
@@ -50,7 +52,14 @@ if (!isLoggedIn()) {
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
                                 <div class="text-xs font-weight-bold text-info text- mb-1">Total Hospitals <br>
-                                    15
+                                    <?php
+																		include_once 'includes/functions.php';
+																		$sql = "SELECT COUNT(*) AS total from hospital";
+	                                  $result = $db->query($sql);
+	                                  $data =  $result->fetch_assoc();
+	                                   echo $data['total'];
+
+																		 ?>
                                 </div>
                                 <div class="row no-gutters align-items-center">
                                     <div class="col-auto">

@@ -10,13 +10,13 @@ $count = 0;
 if ($result->num_rows > 0) {
   $tbody = "";
   while ($row = $result->fetch_assoc()) {
-    $count = $count + 1;
+    $count =$count + 1;
     $dep_id = $row['dep_id'];
     $dep_name = $row['dep_name'];
     $hod_name = $row['hod_name'];
     $total_equipment = 0;
     $total_supplies = 0;
-    $sql_item = "SELECT qty, ittype FROM dep_items WHERE dep_id = '$dep_id'";
+    $sql_item = "SELECT qty, ittype FROM dep_items WHERE id = '$dep_id'";
     $items_arr = $db->query($sql_item)->fetch_all();
     foreach ($items_arr as $item) {
       $ittype = $item[1];
