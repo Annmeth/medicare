@@ -13,7 +13,7 @@ require 'dompdf/autoload.inc.php';
 $dompdf = new Dompdf();
 
 ob_start();
-require 'report.html'; // the one you posted in your question
+require 'report2.php'; // the one you posted in your question
 $html = ob_get_clean();
 
 //$html1 = file_get_contents("C:\xampp\htdocs\testing\testprint.php");
@@ -40,12 +40,12 @@ $dompdf->stream('userprinted.pdf',Array("Attachment"=>0));
 		  	background:#FFFFFF;
 		  }
 #bg {
- 
+
   height: 450px;
- 
+
   margin:60px;
- 	float: left; 
- 		
+ 	float: left;
+
 }
 
 #id {
@@ -72,13 +72,13 @@ font-family: sans-serif;
   opacity: 0.2;
   z-index: -1;
   text-align:center;
-  
- 
+
+
 }
  .container{
 		  	font-size: 12px;
 		  	font-family: sans-serif;
-		    
+
 		  }
 		 .id-1{
 		  	transition: 0.4s;
@@ -89,22 +89,22 @@ font-family: sans-serif;
 		  	font-size: 16px;
 		  	font-family: sans-serif;
 		  	float: left;
-		  	margin:auto;		  	
+		  	margin:auto;
 		  	margin-left:270px;
 		  		box-shadow: 0 4px 8px 0 rgba(0,0,0,0.6);
 		  	transition: 0.4s;
 
-		  	
+
 		  }
 </style>
 	</head>
 
 	<body>
-		<script type="text/javascript">	
- 		
+		<script type="text/javascript">
+
  	window.print();
  </script>
-                  
+
 
 	</body>
 </html>
