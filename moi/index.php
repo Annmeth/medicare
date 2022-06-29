@@ -128,8 +128,7 @@ include 'includes/navbar.php';
         <div class="card">
           <div class="card-body d-flex flex-column">
             <h4 class="card-title">
-              <i class="fas fa-medical menu-icon "></i>
-
+              <i class="fas fa-warehouse menu-icon"></i>
               Store Status
             </h4>
             <p class="card-description">Status per one month</p>
