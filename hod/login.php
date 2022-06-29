@@ -23,7 +23,7 @@
         if ($rows == 1) {
             $_SESSION['username'] = $username;
             // Redirect to user dashboard page
-            header("Location: items.php");
+            header("Location: assigned_items.php");
         } else {
 					  //echo "<script>alert('Invalid Username or Password')document.location = login.php;</script>";
 

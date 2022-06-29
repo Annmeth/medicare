@@ -73,7 +73,7 @@ if (isset($_POST['add_data'])) {
                </div>
                <div class="form-group">
                   <label for=""> Contact</label>
-                  <input type="number" name="contact" id="contact" class="form-control" placeholder="Enter Phone number +255.." required>
+                  <input type="varchar" name="contact" id="contact" class="form-control" placeholder="Enter Phone number +255.." required>
                </div>
                <div class="form-group">
                   <label for=""> Location</label>
