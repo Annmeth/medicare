@@ -20,7 +20,7 @@
 		// Check user is exist in the database
 		$query    = "SELECT * FROM `moi` WHERE username='$username'
                      AND password='" . md5($password) . "'";
-		$result = mysqli_query($db, $query) or die(mysql_error());
+		$result = mysqli_query($db, $query) or die(mysqli_error());
 		$rows = mysqli_num_rows($result);
 		if ($rows == 1) {
 			$_SESSION['username'] = $username;

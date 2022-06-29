@@ -10,7 +10,7 @@
 
         <div class="profile-name">
           <p class="name">
-            Welcome Halima
+            Welcome
           </p>
           <p class="designation">
             Medical Officer in Charge (MOI)
