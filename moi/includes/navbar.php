@@ -46,8 +46,7 @@
 
     <li class="nav-item d-none d-lg-block">
       <a class="nav-link" data-toggle="collapse" href="#sidebar-layouts" aria-expanded="false" aria-controls="sidebar-layouts">
-        <i class="fas fa-house-medical menu-icon"></i>
-
+        <i class="fas fa-warehouse menu-icon"></i>
         <span class="menu-title">Stores</span>
 
       </a>
@@ -61,6 +60,7 @@
     <li class="nav-item">
       <a class="nav-link" href="store_request.php">
         <i class="fas fa-pen-square menu-icon"></i>
+
         <span class="menu-title">Store Requests</span>
       </a>
     </li>
