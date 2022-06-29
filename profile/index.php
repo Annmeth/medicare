@@ -5,7 +5,7 @@
         <metacontent=""/>
             <title>Medical Supplies & Equipment Management System</title>
             <link rel="css/profile.css"/>
-            <!--vendor css files--> 
+            <!--vendor css files-->
             <link href="    https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css"
             rel="stylesheet"/>
             <!--vendor js files -->
@@ -13,7 +13,7 @@
             rel="js"/>
             <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
             rel="js"/>
-        
+
     </head>
     <body>
         <div class="container rounded bg-white mt-5 mb-5">
@@ -31,14 +31,16 @@
                             <div class="col-md-6"><label class="labels">Surname</label><input type="text" class="form-control" value="" placeholder="surname"></div>
                         </div>
                         <div class="row mt-3">
-                            <div class="col-md-12"><label class="labels">Mobile Number</label><input type="text" class="form-control" placeholder="enter phone number" value=""></div>
-                            <div class="col-md-12"><label class="labels">Position</label><input type="text" class="form-control" placeholder="enter position" value=""></div>
-                            <div class="col-md-12"><label class="labels">Email ID</label><input type="text" class="form-control" placeholder="enter email id" value=""></div>
-                            <div class="col-md-12"><label class="labels">Country</label><input type="text" class="form-control" placeholder="country" value=""></div>
-                            <div class="col-md-12"><label class="labels">Region</label><input type="text" class="form-control" placeholder="Region" value=""></div>
+                            <div class="col-md-12"><label class="labels"> Mobile Number </label><input type="text" class="form-control" placeholder="enter phone number" value=""></div>
+                            <div class="col-md-12"><label class="labels"> Position </label><input type="text" class="form-control" placeholder="enter position" value=""></div>
+                            <div class="col-md-12"><label class="labels"> Email ID </label><input type="text" class="form-control" placeholder="enter email id" value=""></div>
+                            <div class="col-md-12"><label class="labels"> Country </label><input type="text" class="form-control" placeholder="country" value=""></div><br><br>
+                            <div class="col-md-12"><label class="labels"> Region </label><input type="text" class="form-control" placeholder="Region" value=""></div>
+                            <div class="col-md-12"><label class="labels"> Upload your picture </label></div>
                         </div>
-                       
-                        <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button">Upload Profile Picture</button></div>
+
+                        <input type="file" id="file" name="file"><br><br>
+
                         <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button">Save Profile</button></div>
                     </div>
                 </div>

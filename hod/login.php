@@ -1,87 +1,73 @@
-
+<?php include('includes/functions.php') ?>
 <!DOCTYPE html>
-<html lang="en">
-
-
+<html>
 <head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Head of Department</title>
-  <!-- plugins:css -->
-  <link rel="stylesheet" href="vendors/iconfonts/font-awesome/css/all.min.css">
-  <link rel="stylesheet" href="vendors/css/vendor.bundle.base.css">
-  <link rel="stylesheet" href="vendors/css/vendor.bundle.addons.css">
-  <!-- endinject -->
-  <!-- plugin css for this page -->
-  <!-- End plugin css for this page -->
-  <!-- inject:css -->
-  <link rel="stylesheet" href="css/style.css">
-  <!-- endinject -->
-  <link rel="shortcut icon" href="http://www.urbanui.com/" />
+	<title>Medical Equipment & Supplies Management System </title>
+	<link rel="stylesheet" type="text/css" href="../style.css">
+	<link rel="icon" type="image/x-icon" href="./images/favicon.ico">
 </head>
-
 <body>
-  <div class="container-scroller">
-    <div class="container-fluid page-body-wrapper full-page-wrapper">
-      <div class="content-wrapper d-flex align-items-center auth">
-        <div class="row w-100">
-          <div class="col-lg-4 mx-auto">
-            <div class="auth-form-light text-left p-5">
-              <div class="brand-logo">
-                <img src="../../images/logo.svg" alt="logo">
-              </div>
-         
-              <h6 class="font-weight-light">Sign in to continue.</h6>
-              <form class="pt-3">
-                <div class="form-group">
-                  <input type="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Username">
-                </div>
-                <div class="form-group">
-                  <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password">
-                </div>
-                <div class="mt-3">
-                  <a class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" href="../../index-2.html">SIGN IN</a>
-                </div>
-                <div class="my-2 d-flex justify-content-between align-items-center">
-                  <div class="form-check">
-                    <label class="form-check-label text-muted">
-                      <input type="checkbox" class="form-check-input">
-                      Keep me signed in
-                    </label>
-                  </div>
-                  <a href="#" class="auth-link text-black">Forgot password?</a>
-                </div>
-             
-                <div class="text-center mt-4 font-weight-light">
-                  Don't have an account? <a href="register.html" class="text-primary">Create</a>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- content-wrapper ends -->
-    </div>
-    <!-- page-body-wrapper ends -->
-  </div>
-  <!-- container-scroller -->
-  <!-- plugins:js -->
-  <script src="../../vendors/js/vendor.bundle.base.js"></script>
-  <script src="../../vendors/js/vendor.bundle.addons.js"></script>
-  <!-- endinject -->
-  <!-- inject:js -->
-  <script src="../../js/off-canvas.js"></script>
-  <script src="../../js/hoverable-collapse.js"></script>
-  <script src="../../js/misc.js"></script>
-  <script src="../../js/settings.js"></script>
-  <script src="../../js/todolist.js"></script>
-  <!-- endinject -->
+
+<?php
+	// When form submitted, check and create user session.
+    if (isset($_POST['username'])) {
+        $username = stripslashes($_REQUEST['username']);    // removes backslashes
+        $username = mysqli_real_escape_string($db, $username);
+        $password = stripslashes($_REQUEST['password']);
+        $password = mysqli_real_escape_string($db, $password);
+        // Check user is exist in the database
+        $query    = "SELECT * FROM `hod` WHERE username='$username'
+                     AND password='" . md5($password) . "'";
+        $result = mysqli_query($db, $query) or die(mysql_error());
+        $rows = mysqli_num_rows($result);
+        if ($rows == 1) {
+            $_SESSION['username'] = $username;
+            // Redirect to user dashboard page
+            header("Location: items.php");
+        } else {
+					  //echo "<script>alert('Invalid Username or Password')document.location = login.php;</script>";
+
+						echo "<script>alert('Invalid Username and Password. Please Login in again');
+						document.location='login.php'</script>";
+						//echo '    document.location = login.php;';
+						 //header("Location: login.php");
+
+
+
+        }
+				//header("Location: login.php");
+    }
+
+		else {
+
+?>
+<div class="header">
+<h4><a href="../index.php"> MEDICAL EQUIPMENT & SUPPLIES MANAGEMENT SYSTEM (MESMS) </a></h4>
+</div>
+<form method="post" action="login.php">
+
+	<?php echo display_error(); ?>
+
+	<div class="input-group">
+		<label>Username</label>
+		<input type="text" name="username" >
+	</div>
+	<div class="input-group">
+		<label>Password</label>
+		<input type="password" name="password">
+	</div>
+	<div class="input-group">
+		<button type="submit" class="btn" name="login_btn">Login</button>
+	</div>
+
+</form>
+
+<?php
+    }
+?>
+
+
+
+
 </body>
-
-
-<!-- Mirrored from www.urbanui.com/melody/template/pages/samples/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 15 Sep 2018 06:08:53 GMT -->
 </html>
-
-
-
