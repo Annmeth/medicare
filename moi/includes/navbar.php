@@ -34,7 +34,6 @@
       <a class="nav-link" data-toggle="collapse" href="#page-layouts" aria-expanded="false" aria-controls="page-layouts">
         <i class="fa fa-building menu-icon"></i>
         <span class="menu-title">Department</span>
-
       </a>
       <div class="collapse" id="page-layouts">
         <ul class="nav flex-column sub-menu">
