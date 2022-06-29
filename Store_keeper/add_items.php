@@ -67,10 +67,9 @@ if (isset($_POST['add_data'])) {
         </div>
         <div class="form-group">
           <label for=""> Item Type </label>
-          <input type="" name="ittype" id="ittype" class="form-control" placeholder="" required>
-          <select class="btn btn-default" id="Ittype">
-            <option value="depid">Equipment</option>
-            <option value="depid">Supplies</option>
+          <select class="form-group" id="Ittype">
+            <option value="">Equipment</option>
+            <option value="">Supplies</option>
           </select>
         </div>
         <div class="form-group">
