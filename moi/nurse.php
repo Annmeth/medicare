@@ -37,6 +37,7 @@ include 'includes/navbar.php';
                             <th>Email Address</th>
                             <th>Contact</th>
                             <th>Position</th>
+                            <th>Username</th>
                             <th>Actions</th>
                         </tr>
                       </thead>
@@ -62,6 +63,7 @@ include 'includes/navbar.php';
                                                    <td><?php echo $row['email'] ?></td>
                                                    <td><?php echo $row['contact'] ?></td>
                                                    <td><?php echo $row['role'] ?></td>
+                                                   <td><?php echo $row['username'] ?></td>
                                                    <td><button class="btn btn-outline-primary">View</button></td>
 
                                                </tr>
