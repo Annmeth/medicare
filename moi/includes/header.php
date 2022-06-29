@@ -80,7 +80,7 @@
                   Settings
                 </a>
                 <a class="dropdown-item">
-                  <i class="fas fa-cog text-primary"></i>
+                  <i class="fa fa-user menu-icon"></i>
                   user profile
                 </a>
                 <div class="dropdown-divider"></div>
