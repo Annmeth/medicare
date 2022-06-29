@@ -113,23 +113,24 @@ if ($result->num_rows > 0) {
                 </thead>
                 <tbody>
 
-                <?php //$tbody;  ?>
+                  <?php //$tbody;  
+                  ?>
 
-                <tr>
+                  <tr>
                     <td><?php echo $count ?></td>
-                    <td>D-000<?php echo $dep_id ?></td>
+                    <td>D-0001<?php echo $dep_id ?></td>
                     <td><?php echo  $dep_name ?></td>
                     <td><?php echo $hod_name ?></td>
                     <td><?php echo  $total_equipment ?></td>
                     <td><?php echo $total_supplies ?> </td>
-                <td>
+                    <td>
 
-                  <form method='POST' action='view_department_report.php' style='border:none;'>
-                    <input type='hidden' name='dep_id' value='<?php echo $dep_id; ?>' </input>
-                    <button type='submit' class='btn btn-outline-primary' title='View Report'>View Report</button>
-                  </form>
-                </td>
-              </tr>
+                      <form method='POST' action='view_department_report.php' style='border:none;'>
+                        <input type='hidden' name='dep_id' value='<?php echo $dep_id; ?>' </input>
+                        <button type='submit' class='btn btn-outline-primary' title='View Report'>View Report</button>
+                      </form>
+                    </td>
+                  </tr>
 
                 </tbody>
               </table>
