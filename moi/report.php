@@ -16,7 +16,7 @@ if ($result->num_rows > 0) {
     $hod_name = $row['hod_name'];
     $total_equipment = 0;
     $total_supplies = 0;
-    $sql_item = "SELECT qty, ittype FROM dep_items WHERE id = '$dep_id'";
+    $sql_item = "SELECT qty, ittype FROM dep_items WHERE dep_id = '$dep_id'";
     $items_arr = $db->query($sql_item)->fetch_all();
     foreach ($items_arr as $item) {
       $ittype = $item[1];
@@ -113,7 +113,7 @@ if ($result->num_rows > 0) {
                 </thead>
                 <tbody>
 
-                  <?php //$tbody;  
+                  <?php //$tbody;
                   ?>
 
                   <tr>

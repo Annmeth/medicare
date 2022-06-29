@@ -50,75 +50,59 @@ include 'includes/navbar.php';
                 <div class="col-12">
                   <div class="table-responsive">
                     <table id="order-listing" class="table">
+
                     <thead>
-                        <tr>
-						<th>S/N</th>
+
+                      <tr>
+						            <th>S/N</th>
                         <th>Dep-ID</th>
                         <th>Nurse Name</th>
                         <th>Item Type</th>
-						           <th>Item Name</th>
+						             <th>Item Name</th>
 					            	<th>Quantity received</th>
                         <th>Import date</th>
                         <th>Condition</th>
                         <th>Batch no</th>
-				                <th>Export date</th>
-                        </tr>
+                      </tr>
+
                       </thead>
+
                       <tbody>
-                        <tr>
-							              <td>01</td>
-                            <td>D100</td>
-                            <td>Amina Rashid</td>
-                            <td>Equipment</td>
-						              	<td>X-Ray machine</td>
-							               <td>2</td>
-                             <td>01/03/2022</td>
-                             <td>Working</td>
-                             <td>W-0001</td>
-						                	<td>---</td>
-                            <td>
-                        </tr>
-                        
-                        <tr>
-							              <td>02</td>
-                            <td>D100</td>
-                            <td>Amina Rashid</td>
-                            <td>Equipment</td>
-						              	<td>X-Ray machine</td>
-							               <td>2</td>
-                             <td>02/03/2022</td>
-                             <td>Working</td>
-                             <td>W-0001</td>
-						                	<td>---</td>
-                            <td>
-                        </tr>
-                        <tr>
-						             <td>03</td>
-                            <td>D100</td>
-                            <td>Amina Rashid</td>
-                            <td>Supplies</td>
-							              <td>syringes</td>
-							              <td> 2 Boxes</td>
-						            	  <td>01/03/2022</td>
-						               	<td>safe state</td>
-                            <td>M-0001</td>
-						 	              <td>02/04/2022</td>
+                        <?php
+                            include_once 'includes/functions.php';
+                           //$conn = new mysqli("localhost","root","","medicare");
+                           $sql = "SELECT * FROM dep_items";
+                           $result = $db->query($sql);
+                           $count=0;
+                           if ($result -> num_rows >  0) {
 
-                        </tr>
-                        <tr>
-						             <td>04</td>
-                         <td>D100</td>
-                         <td>Amina Rashid</td>
-                         <td>Supplies</td>
-							           <td>syringes</td>
-						           	<td> 2 Boxes</td>
-						          	<td>01/03/2022</td>
-						          	<td>finished</td>
-                        <td>M-0001</td>
-						          	<td>03/05/2022</td>
+                             while ($row = $result->fetch_assoc())
+                                {
+                                   $count=$count+1;
+                          ?>
 
-                        </tr>
+                                    <tr>
+                                        <td>I-000<?php echo $count ?></td>
+                                        <td><?php echo $row['dep_id'] ?></td>
+                                        <td><?php echo $row['nsname'] ?></td>
+                                        <td><?php echo $row['ittype'] ?></td>
+                                        <td><?php echo $row['itname'] ?></td>
+                                        <td><?php echo $row['qty'] ?></td>
+                                        <td><?php echo $row['impdate'] ?></td>
+                                        <td><?php echo $row['cdtn'] ?></td>
+                                        <td><?php echo $row['btcno'] ?></td>
 
+                                        <!--<td>
+                                          <button class="btn btn-outline-primary">View</button>
+                                        </td>-->
+
+                                    </tr>
+                                    <?php
+
+                                         }
+                                       }
+
+                                    ?>
                       </tbody>
                     </table>
                   </div>
