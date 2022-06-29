@@ -28,7 +28,7 @@ include 'includes/scripts.php';
        $password_1 = mysqli_real_escape_string($db, $password_1);
        $fname = stripslashes($_REQUEST['fname']);
        $fname = mysqli_real_escape_string($db, $fname);
-       //$contact = stripslashes($_REQUEST['contact']);
+       $contact = stripslashes($_REQUEST['contact']);
        $contact = mysqli_real_escape_string($db, $_POST['contact']);
        $hosp_name = stripslashes($_REQUEST['hosp_name']);
        $hosp_name = mysqli_real_escape_string($db, $hosp_name);
@@ -50,20 +50,6 @@ include 'includes/scripts.php';
        }
 
 
-
-      /* if ($password != $password_1) {
-     		echo "<script>alert('The Passwords Do not match');</script>";
-     	}
-
-
-       $query    = "INSERT into `moi` (fname, email, contact, username, hosp_name, password)
-                    VALUES ('$fname', '$email', '$contact', '$username', '$hosp_name', '" . md5($password) . "')";
-       $result   = mysqli_query($db, $query);
-       if ($result) {
-           echo "<script>alert('Moi Successfully Created')</script>";
-       } else {
-           echo "<script>alert('Error!!!! Please register correctly')</script>";
-       }*/
    }
  ?>
 
