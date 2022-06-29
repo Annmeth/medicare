@@ -18,62 +18,6 @@ include 'includes/navbar.php';
 
                     </a>
 
-
-                <!-- Add form -->
-    <!--<div class="modal fade" id="Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-
-            <form action="routes.php" method="POST">
-               <div class="modal-body">
-               <h4><b>Register New Head of Department</b></h4>
-                   <div class="form-group">
-                      <label for=""> Head of Department ID </label>
-                      <input type="varchar" name="via" class="form-control" placeholder="">
-                   </div>
-
-                   <div class="form-group">
-                      <label for=""> Head of Department Name </label>
-
-                      <input type="text" name="via" class="form-control" placeholder="">
-                      </div>
-
-
-                   <div class="form-group">
-                      <label for=""> Department Name</label>
-
-                      <input type="text" name="via" class="form-control" placeholder="">
-                   </div>
-                   <div class="form-group">
-                      <label for=""> Email Address </label>
-
-                      <input type="varchar" name="via" class="form-control" placeholder="">
-                      </div>
-                      <div class="form-group">
-                      <label for=""> Contact </label>
-
-                      <input type="Number" name="via" class="form-control" placeholder="Enter Phonenumber +255...">
-                      </div>
-                      <div class="form-group">
-                      <label for=""> Position </label>
-
-                      <input type="text" name="via" class="form-control" placeholder="">
-                      </div>
-                      <label for=""> Password </label>
-
-                     <input type="varchar" name="via" class="form-control" placeholder="">
-                     </div>
-
-
-
-                                <button type="send" class="btn btn-primary" name="send">Save</button>
-
-
-                 </form>
-                 </div>
-                 </div>
-              </div>-->
      </nav>
           </div>
           <div class="card">
@@ -91,6 +35,7 @@ include 'includes/navbar.php';
                             <th>Email Address</th>
                             <th>Contact</th>
                             <th>Position</th>
+                            <th>Username</th>
                             <th>Actions</th>
                         </tr>
                       </thead>
@@ -116,6 +61,7 @@ include 'includes/navbar.php';
                                                    <td><?php echo $row['email'] ?></td>
                                                    <td><?php echo $row['contact'] ?></td>
                                                    <td><?php echo $row['role'] ?></td>
+                                                   <td><?php echo $row['username'] ?></td>
 
                                                    <td><button class="btn btn-outline-primary">View</button></td>
 

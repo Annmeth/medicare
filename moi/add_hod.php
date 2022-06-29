@@ -9,59 +9,64 @@ include 'includes/scripts.php';
 
 <?php
 // initializing variables
-$hod_name = "";
-$dep_name   = "";
-$email  = "";
+$hod_name     = "";
+$dep_name = "";
+$username ="";
+$email = "";
 $contact = "";
-$role   = "";
-$password_1 = "";
-$password_2 = "";
+$role = "";
+$password = "";
+//$password_1 = "";
 
 
-// connect to the database
-//$db = mysqli_connect('localhost', 'root', '', 'medicare');
-//if (mysqli_connect_errno())
-  //  {
-  //  echo "Failed to connect to MySQL: " . mysqli_connect_error();
-  //  }
+// When form submitted, insert values into the database.
+  if (isset($_REQUEST['username'])) {
+      // removes backslashes
+      $username = stripslashes($_REQUEST['username']);
+      //escapes special characters in a string
+      $username = mysqli_real_escape_string($db, $username);
+      $email    = stripslashes($_REQUEST['email']);
+      $email    = mysqli_real_escape_string($db, $email);
+      $password = stripslashes($_REQUEST['password']);
+      $password = mysqli_real_escape_string($db, $password);
+      $password_1 = stripslashes($_REQUEST['password_1']);
+      $password_1 = mysqli_real_escape_string($db, $password_1);
+      $dep_name = stripslashes($_REQUEST['dep_name']);
+      $dep_name = mysqli_real_escape_string($db, $dep_name);
+      //$contact = stripslashes($_REQUEST['contact']);
+      $contact = mysqli_real_escape_string($db, $_POST['contact']);
+      $hod_name = stripslashes($_REQUEST['hod_name']);
+      $hod_name = mysqli_real_escape_string($db, $hod_name);
+      $role    = stripslashes($_REQUEST['role']);
+      $role    = mysqli_real_escape_string($db, $role);
 
-// Add item
-if (isset($_POST['add_data'])) {
-  // receive all input values from the form
-  //echo "connect";
-$hod_name = mysqli_real_escape_string($db, $_POST['hod_name']);
-$dep_name = mysqli_real_escape_string($db, $_POST['dep_name']);
-$email    = mysqli_real_escape_string($db, $_POST['email']);
-$contact  = mysqli_real_escape_string($db, $_POST['contact']);
-$role     = mysqli_real_escape_string($db, $_POST['role']);
-$password_1 = mysqli_real_escape_string($db, $_POST['password_1']);
-$password_2 = mysqli_real_escape_string($db, $_POST['password_2']);
+      if ($password != $password_1) {
+        // code...
+         echo "<script>alert('The Passwords Do not match');</script>";
+      } else {
+        // code...
+        $query    = "INSERT into `hod` (username, hod_name, dep_name, email, contact, role, password)
+                     VALUES ('$username', '$hod_name', '$dep_name', '$email', '$contact', '$role', '" . md5($password) . "')";
+        $result   = mysqli_query($db, $query);
 
-if ($password_1 != $password_2) {
-  array_push($errors, "The two passwords do not match");
-}
-    $password_1 = md5($password_1);
-    $query = "INSERT INTO hod (hod_name,dep_name,email,contact,role,password)
-  			  VALUES('$hod_name','$dep_name','$email','$contact','$role','$password_1')";
-      if(mysqli_query($db, $query))
-      {
-      echo "<script>alert('Data is Successfully stored');</script>";
+        if ($result) {
+            echo "<script>alert('HOD data is Successfully Entered Please use the credentials to Login')</script>";
+        } else {
+            echo "<script>alert('Error!!!! Please register correctly')</script>";
+        }
+      }
 
-    }
-    else{
-        echo"<script>alert('Somthing wrong!!!');</script>";
-    }
 
-  //	header('location: hospital.php');
+  }
 
-}
+
 ?>
 
 
  <div class="main-panel">
          <div class="content-wrapper">
            <div class="page-header">
-             <h3 class="page-title">Add New HOD</h3>
+             <h3 class="page-title">Add A New HOD</h3>
            </div>
            <form action="add_hod.php" method="POST">
            <div class="body">
@@ -72,37 +77,37 @@ if ($password_1 != $password_2) {
                </div>-->
 
                <div class="form-group">
-                  <label for=""> HOD Full Name </label>
+                  <label for=""> HOD'S  Name </label>
                   <input type="text" name="hod_name" id="hod_name" class="form-control" placeholder="" required>
                 </div>
+                <div class="form-group">
+                   <label for=""> User Name </label>
+                   <input type="varchar" name="username" id="username" class="form-control" placeholder="" required>
+                 </div>
                <div class="form-group">
                   <label for=""> Department Name</label>
                   <input type="varchar" name="dep_name" id="dep_name" class="form-control" placeholder="" required>
                </div>
                <div class="form-group">
-                  <label for=""> Email Address</label>
-                  <input type="varchar" name="email" id="email" class="form-control" placeholder="Enter a Valid Email Address" required>
+                 <label for=""> Email Address</label>
+                   <input type="text" name="email" id="email" class="form-control" placeholder="Please enter a Valid Email Address" required>
                </div>
                <div class="form-group">
-                  <label for=""> Contact</label>
-                  <input type="text" name="contact" id="contact" class="form-control" placeholder="" required>
+                 <label for=""> Contact </label>
+                 <input type="varchar" name="contact" id="contact" class="form-control" placeholder="Please start with 0" required>
                </div>
-
                <div class="form-group">
-                  <label for=""> Position (Role)</label>
-                  <input type="text" name="role" id="role" class="form-control" placeholder="" required>
+                 <label for=""> Postion (Role) </label>
+                 <input type="text" name="role" id="role" class="form-control" required>
                </div>
-
                <div class="form-group">
-                 <label for="">Password</label>
+                 <label for=""> Password </label>
+                 <input type="password" name="password" id="password" class="form-control" required>
+               </div
+               <div class="form-group">
+                 <label for=""> Confirm Password </label>
                  <input type="password" name="password_1" id="password_1" class="form-control" required>
                </div>
-
-               <div class="form-group">
-                 <label for="">Confirm Password</label>
-                 <input type="password" name="password_2" id="password_2" class="form-control">
-               </div>
-
 
               <button type="submit" class="btn btn-primary" name="add_data">Save</button>
 

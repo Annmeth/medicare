@@ -76,7 +76,7 @@
                 <i class="fas fa-cog text-primary"></i>
                 Settings
               </a>
-              <a class="dropdown-item" href="../profile/index.php">
+              <a class="dropdown-item">
                 <i class="fas fa-cog text-primary"></i>
                 My Profile
               </a>
