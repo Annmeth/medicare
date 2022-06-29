@@ -39,7 +39,7 @@ include 'includes/navbar.php';
                         <?php
                             include_once 'includes/functions.php';
                            //$conn = new mysqli("localhost","root","","medicare");
-                           $sql = "SELECT * FROM dep_items";
+                           $sql = "SELECT * FROM dep_items1";
                            $result = $db->query($sql);
                            $count=0;
                            if ($result -> num_rows >  0) {

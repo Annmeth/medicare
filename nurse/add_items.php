@@ -15,6 +15,7 @@ $itname  = "";
 $qty    = "";
 $btcno = "";
 $cdtn = "";
+$dep_id = "";
 
 
 // connect to the database
@@ -35,11 +36,11 @@ if (isset($_POST['add_data'])) {
    $qty     = mysqli_real_escape_string($db, $_POST['qty']);
    $btcno   = mysqli_real_escape_string($db, $_POST['btcno']);
    $cdtn     = mysqli_real_escape_string($db, $_POST['cdtn']);
-   
+   $dep_id  = mysqli_real_escape_string($db, $_POST['dep_id']);
 
 
-   $query = "INSERT INTO dep_items (nsname,ittype,itname,qty,cdtn,btcno)
-  			  VALUES('$nsname','$ittype','$itname','$qty','$cdtn','$btcno')";
+   $query = "INSERT INTO dep_items (dep_id,nsname,ittype,itname,qty,cdtn,btcno)
+  			  VALUES('$dep_id','$nsname','$ittype','$itname','$qty','$cdtn','$btcno')";
    if (mysqli_query($db, $query)) {
       echo "<script>alert('Successfully stored');</script>";
    } else {
@@ -61,6 +62,10 @@ if (isset($_POST['add_data'])) {
          <div class="body">
 
 
+            <div class="form-group">
+              <label for="">Department ID</label>
+              <input type="varchar" name="dep_id" id="dep_id" class="form-control" placeholder="Please enter a valid Dep ID" value="">
+            </div>
             <div class="form-group">
                <label for="">Nurse Name </label>
                <input type="varchar" name="nsname" id="nsname" class="form-control" placeholder="" required>
