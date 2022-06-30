@@ -9,7 +9,7 @@ include 'includes/scripts.php';
 
 <?php
 // initializing variables
-$nsname ="";
+$nsname = "";
 $ittype     = "";
 $itname  = "";
 $qty    = "";
@@ -63,8 +63,8 @@ if (isset($_POST['add_data'])) {
 
 
             <div class="form-group">
-              <label for="">Department ID</label>
-              <input type="varchar" name="dep_id" id="dep_id" class="form-control" placeholder="Please enter a valid Dep ID" value="">
+               <label for="">Department ID</label>
+               <input type="varchar" name="dep_id" id="dep_id" class="form-control" placeholder="Please enter a valid Dep ID" value="">
             </div>
             <div class="form-group">
                <label for="">Nurse Name </label>
@@ -72,8 +72,12 @@ if (isset($_POST['add_data'])) {
             </div>
 
             <div class="form-group">
-               <label for=""> Item Type </label>
-               <input type="varchar" name="ittype" id="ittype" class="form-control" placeholder="" required>
+
+               <label for=""> Items type </label><br />
+               <select id="ittype" name="ittype" style="width:340px; height:45px;">
+                  <option value="equipment">Equipment</option>
+                  <option value="supply">Supply</option>
+               </select>
             </div>
 
             <div class="form-group">

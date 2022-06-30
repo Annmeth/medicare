@@ -67,10 +67,8 @@ if (isset($_POST['add_data'])) {
         </div>
         <div class="form-group">
 
-
-
           <label for=""> Items type </label><br />
-          <select id="ittype" name="ittype" style="width:360px; height:46px;">
+          <select id="ittype" name="ittype" style="width:340px; height:45px;">
             <option value="equipment">Equipment</option>
             <option value="supply">Supply</option>
           </select>

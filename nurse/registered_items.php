@@ -17,7 +17,7 @@ include 'includes/navbar.php';
         <nav aria-label="breadcrumb">
 
           <a class="dropdown-item" href="add_items.php">
-            <h5><b> Register New Items </b></h5>
+            <h5><b>+ Register New Items </b></h5>
 
           </a>
         </nav>
@@ -63,7 +63,7 @@ include 'includes/navbar.php';
                         <td><?php echo $row['itname'] ?></td>
                         <td><?php echo $row['qty'] ?></td>
                         <td><?php echo $row['impdate'] ?></td>
-                          <td><?php echo $row['cdtn'] ?></td>
+                        <td><?php echo $row['cdtn'] ?></td>
                         <td><?php echo $row['btcno'] ?></td>
                         <td>
                           <button class="btn btn-outline-primary">View</button>
