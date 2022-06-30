@@ -3,7 +3,7 @@ include 'includes/functions.php';
 include 'includes/header.php';
 include 'includes/navbar.php';
 
-$dep_id = $_REQUEST['dep_id'];
+/*$dep_id = $_REQUEST['dep_id'];
 
 $count = 0;
 $tbody = "";
@@ -36,7 +36,7 @@ if ($result->num_rows > 0) {
   </tr>";
   }
 }
-
+*/
 ?>
 
 <div class="main-panel">
@@ -69,7 +69,7 @@ if ($result->num_rows > 0) {
 
                 <form method='POST' action='printbulk.php' style='border:none;display:inline;padding:0;'>
                   <input type='hidden' name='is_general' value='0' />
-                  <input type='hidden' name='dep_id' value='<?php echo $dep_id; ?>' />
+                  <input type='hidden' name='dep_id'  />
                   <button type='submit' id="print-btn" class='btn btn-outline-success' title='Print'>Print</button>
                 </form>
                 <div id="show-report"></div>

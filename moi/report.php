@@ -4,7 +4,7 @@ include 'includes/header.php';
 include 'includes/navbar.php';
 
 //$conn = new mysqli("localhost","root","","medicare");
-$sql = "SELECT  * FROM department";
+/*$sql = "SELECT  * FROM department";
 $result = $db->query($sql);
 $count = 0;
 if ($result->num_rows > 0) {
@@ -42,7 +42,7 @@ if ($result->num_rows > 0) {
 </tr>";
   }
 }
-
+*/
 ?>
 
 <div class="main-panel">
@@ -102,7 +102,7 @@ if ($result->num_rows > 0) {
               <table id="order-listing" class="table">
                 <thead>
                   <tr>
-                    <th>S/N</th>
+
                     <th>Department ID</th>
                     <th>Department Name</th>
                     <th>HOD Name</th>
@@ -112,25 +112,51 @@ if ($result->num_rows > 0) {
                   </tr>
                 </thead>
                 <tbody>
-
                   <?php
-                  ?>
+                                 include_once 'includes/functions.php';
+                                //$conn = new mysqli("localhost","root","","medicare");
+                                $sql = "SELECT * FROM department";
+                                $result = $db->query($sql);
+                                $count=0;
+                                if ($result -> num_rows >  0) {
 
-                  <tr>
-                    <td><?php echo $count ?></td>
-                    <td>D-000<?php echo $dep_id ?></td>
-                    <td><?php echo  $dep_name ?></td>
-                    <td><?php echo $hod_name ?></td>
-                    <td><?php echo  $total_equipment ?></td>
-                    <td><?php echo $total_supplies ?> </td>
-                    <td>
+                                  while ($row = $result->fetch_assoc())
+                                    {
+                                       $count=$count+1;
+                               ?>
 
-                      <form method='POST' action='view_department_report.php' style='border:none;'>
-                        <input type='hidden' name='dep_id' value='<?php echo $dep_id; ?>'>
-                        <button type='submit' class='btn btn-outline-primary' style="margin-left:-50px;" title='View Report'>View Report</button>
-                      </form>
-                    </td>
-                  </tr>
+                                         <tr>
+                                             <td>D-000<?php echo $count ?></td>
+                                             <td><?php echo $row['dep_name'] ?></td>
+                                             <td><?php echo $row['hod_name'] ?></td>
+                                             <td>
+                                               <?php $sql = "SELECT COUNT(ittype) AS total FROM items WHERE ittype ='equipment'";
+                                                     $result = $db->query($sql);
+                                                     $data =  $result->fetch_assoc();
+                                                     echo $data['total']; ?></td>
+                                             </td>
+                                             <td>
+                                                 <?php $sql = "SELECT COUNT(ittype) AS total FROM items WHERE ittype ='supply'";
+                                                       $result = $db->query($sql);
+                                                       $data =  $result->fetch_assoc();
+                                                       echo $data['total']; ?>
+                                             </td>
+                                             <td>
+
+                                               <form method='POST' action='view_department_report.php' style='border:none;'>
+                                                 <input type='hidden' name='dep_id' value='<?php //echo $dep_id; ?>'>
+                                                 <button type='submit' class='btn btn-outline-primary' style="margin-left:-50px;" title='View Report'>View Report</button>
+                                               </form>
+                                             </td>
+                                           </tr>
+                                         </tr>
+                                         <?php
+
+                                              }
+                                            }
+
+                                         ?>
+
 
                 </tbody>
               </table>

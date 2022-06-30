@@ -84,7 +84,22 @@ include 'includes/navbar.php';
                         <td><?php echo $row['s_name'] ?></td>
                         <td><?php echo $row['skeeper_name'] ?></td>
                         <td>
-                          <button type='submit' class='btn btn-outline-primary' style="margin-right:-50px;" title='View Report'>View Report</button>
+                          <?php $sql = "SELECT COUNT(ittype) AS total FROM items WHERE ittype ='equipment'";
+                                $result = $db->query($sql);
+                                $data =  $result->fetch_assoc();
+                                echo $data['total']; ?></td>
+                        </td>
+                        <td>
+                            <?php $sql = "SELECT COUNT(ittype) AS total FROM items WHERE ittype ='supply'";
+                                  $result = $db->query($sql);
+                                  $data =  $result->fetch_assoc();
+                                  echo $data['total']; ?>
+                        </td>
+                        <td>
+                          <form method='POST' action='view_store_report.php' style='border:none;'>
+                            <input type='hidden' name='dep_id' value='<?php echo $dep_id; ?>'>
+                            <button type='submit' class='btn btn-outline-primary' style="margin-left:-50px;" title='View Report'>View Report</button>
+                          </form>
                         </td>
                       </tr>
                   <?php

@@ -50,11 +50,47 @@
                 <th>Import date</th>
                 <th>Condition</th>
                 <th>Batch no</th>
-                
+
               </tr>
             </thead>
             <tbody>
-              <?php echo $tbody; ?>
+              <?php
+                  include_once 'includes/functions.php';
+                 //$conn = new mysqli("localhost","root","","medicare");
+                 $sql = "SELECT * FROM dep_items";
+                 $result = $db->query($sql);
+                 $count=0;
+                 if ($result -> num_rows >  0) {
+
+                   while ($row = $result->fetch_assoc())
+                      {
+                         $count=$count+1;
+                ?>
+
+                          <tr>
+                              <td>I-000<?php echo $count ?></td>
+                              <td><?php echo $row['dep_id'] ?></td>
+                              <td><?php echo $row['nsname'] ?></td>
+                              <td><?php echo $row['ittype'] ?></td>
+                              <td><?php echo $row['itname'] ?></td>
+                              <td><?php echo $row['qty'] ?></td>
+                              <td><?php echo $row['impdate'] ?></td>
+                              <td><?php echo $row['cdtn'] ?></td>
+                              <td><?php echo $row['btcno'] ?></td>
+
+                              <!--<td>
+                                <button class="btn btn-outline-primary">View</button>
+                              </td>-->
+
+                          </tr>
+                          <?php
+
+                               }
+                             }
+
+                          ?>
+
+              <?php //echo $tbody; ?>
             </tbody>
           </table>
   </table>
